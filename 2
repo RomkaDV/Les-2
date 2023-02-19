@@ -1,1 +1,102 @@
-git iit
+// Задача 10: Напишите программу, которая включает в себя трехзначное число и на выходе показывает вторую цифру этого числа.
+// 456 -> 5
+// 782 -> 8
+// 918 -> 1
+
+Консоль.Очистить();
+Console.WriteLine("Задача 10");
+Console.Write("Введи трехзначное число: ");
+int threeDigitNumber = Convert.ToInt32(Console.ReadLine());
+строка stringNumber = Convert.ToString(threeDigitNumber);
+Console.WriteLine("вторая цифра этого числа -> "+stringNumber[1]);
+
+// Задача 13: Напишите программу, которая выводит треть цифру заданного числа или сообщает, что других цифр нет.
+// 645 -> 5
+// 78 -> других цифр нет
+// 32679 -> 6
+
+Console.WriteLine("Задача 13");
+
+Console.Write("Введите число: ");
+int anyNumber = Convert.ToInt32(Console.ReadLine());
+строка anyNumberText = Convert.ToString(anyNumber);
+если (любойNumberText.Length > 2){
+  Console.WriteLine("третья цифра -> " + anyNumberText[2]);
+}
+еще {
+  Console.WriteLine("-> первых цифр нет");
+}
+
+//Задача 15: Напишите программу, которая принимает на вход цифру, загружающую день недели, и включает, является ли этот день выходным.
+// 6 -> да
+// 7 -> да
+// 1 -> нет
+
+Console.WriteLine("Задача 15");
+
+Console.Write("Введи цифру, закрывающую день недели: ");
+int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+void CheckingTheDayOfTheWeek (int dayNumber) {
+  если (dayNumber == 6 || dayNumber == 7) {
+  Console.WriteLine("(этот день выходной) -> да");
+  }
+  иначе если (dayNumber < 1 || dayNumber > 7) {
+    Console.WriteLine("это вообще не день недели");
+  }
+  else Console.WriteLine("(этот день не выходной) -> нет");
+}
+
+ПроверкаДняНедели(номер дня);
+
+
+// Доп. задача: Игра угадайка. Программа загадывает случайное число. Пользователь его угадывает. Если пользователь дает неправильный ответ, программа сообщает, больше загаданное число или меньше
+// Доп. проблема с усложнением: на отгадывание сдается 3 будущего.
+
+Console.WriteLine("Задача 'Дополнительная' ");
+
+int randomNumber = RandomNumber (0, 1000);
+
+int RandomNumber (int min, int max) {   
+  вернуть новый Random(). Далее (мин, макс);
+}
+
+void CheckingTheNumber (int myNumber, int randomNumber) {
+
+  если (моёЧисло > случайноеЧисло) {
+    Console.WriteLine("Не угадал, твоё число великовато");
+  }
+  else Console.WriteLine("Не угадал, твоё число маловато");
+}
+
+недействительным AttemptCounter (int maxCounter) {
+
+  счетчик целых чисел = 1;
+  в то время как (счетчик <= maxCounter) {
+
+    Console.Write("Попытка номера " + counter);
+    Console.Write(". Введи число: ");
+    int myNumber = Convert.ToInt32(Console.ReadLine());
+
+    если (моёЧисло == случайноеЧисло){
+      Console.WriteLine("Поздравляю, ты угадал!");
+      перерыв;
+    }
+    еще {
+      ПроверкаЧисла(моеЧисло,случайноеЧисло);
+      счетчик++;
+    }
+  }
+}
+
+Console.WriteLine("Игра до 3 оценок");
+Счетчик попыток (3);
+
+Console.WriteLine("В основных случаях не уложился. Продолжим ? (напиши да/нет)");
+
+нить? даНет = Console.ReadLine();
+
+если (даНет == "да"){
+Счетчик попыток(1000);
+}
+else Console.Write("Загаданное число было: " + randomNumber);
